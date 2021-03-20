@@ -1,6 +1,9 @@
+'use strict'
+
 let a,
     b,
     D;
+
 for (let c = 1; c < 500; c++) {
 
     D = ((2 * (1000 - c)) ** 2) - (8 * (((1000 - c) ** 2) - (c ** 2)));
@@ -9,7 +12,8 @@ for (let c = 1; c < 500; c++) {
         a = (2 * (1000 - c) - Math.sqrt(D)) / 4;
         if (Number.isInteger(a)) {
             b = 1000 - a - c;
-            console.log(`a${a}__b${b}__c${c}`)
+            console.log(`a = ${a}  b = ${b}  c = ${c}`);
+            break;
         }
     }
 

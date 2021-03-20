@@ -1,3 +1,5 @@
+'use strict'
+
 for (let num = 1;; num++) {
     let ar = [];
     for (let i = 20; i >= 1; i--) {

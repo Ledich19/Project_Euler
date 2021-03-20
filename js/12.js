@@ -14,7 +14,7 @@ for (let i = 1; i > 0; i++) {
     primeFactors(x);
     
     for (let j = 2; j <= y[y.length - 1]; j++) {
-        if (number(j)) {
+        if (primeCheck(j)) {
             let k = 0;
             for (let i = 0; i < y.length; i++) {
                 if (y[i] == j) {
@@ -47,7 +47,7 @@ function primeFactors(x) {
     }
 }
 
-function number(x) {
+function primeCheck(x) {
     for (let i = 2; i <= Math.sqrt(x); i++) {
         if (x % i == 0) {
             return false;
