@@ -31,3 +31,16 @@ function sort(i) {
 		max = i;
 	}
 }
+
+
+
+// function palindrom(num) {
+// 	if(num.length == 1) {
+// 		return true;
+// 	}
+// 	if (num[0] !== num[num.length - 1]) {
+// 		return false;
+// 	}
+// num = num.slice(1,-1);
+// return palindrom(num);
+// }
