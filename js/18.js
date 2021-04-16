@@ -1,28 +1,19 @@
 'use strict'
 
-let arr = [
-    [3],
-    [7, 4],
-    [2, 4, 6],
-    [8, 5, 9, 3]
-];
-let arrHelp = [];
-// let arr1 = `3
-// 7 4
-// 2 4 6
-// 8 5 9 3`
+let arr1 = `3
+7 4
+2 4 6
+8 5 9 3`
 
-// arr=[];
-// arr2 =arr1.split('\n');
-// arr2.forEach(element => {
-//     arr.push(element.split(' '));
-// });
-// console.log(arr);
+let arr = [];
+let arr2 = arr1.split('\n');
+arr2.forEach(element => {
+    arr.push(element.split(' '));
+});
+console.log(arr);
+console.log(arr.lenght);
 
-
-
-
-for (let j = 2; j >= 0; j--) {
+for (let j = arr.lenght; j >= 0; j--) {
     for (let i = 0; i < arr[j].length; i++) {
         ;
         arr[j].splice(i, 1, summ(j, i));
@@ -44,5 +35,3 @@ function biggest(a, b) {
         return b;
     }
 }
-
-
