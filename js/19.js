@@ -16,8 +16,11 @@ let arrWeeks = [];
 let firstDay = 1;
 
 for (let i = year; i <= yearFinish; i++) {
+
     arrYear = [];
     arrWeeks = [];
+
+
     if (i % 400 == 0) {
         arrMonth[1] = 29;
     } else if (i % 4 == 0 && i % 100 !== 0) {
@@ -31,9 +34,14 @@ for (let i = year; i <= yearFinish; i++) {
             arrYear.push(i);
         }
     })
-    
+
     weeks(firstDay);
     comparison(arrYear, arrWeeks);
+    firstDay = arrWeeks[arrWeeks.length - 1] + 1;
+
+    if (i < yearStart) {
+        sandays = 0;
+    }
 }
 
 console.log(sandays);
@@ -52,7 +60,7 @@ function weeks(count) {
 function comparison(arr1, arr2) {
     for (let i = 0; i < arr1.length; i++) {
         if (arr1[i] == 1 && arr2[i] == 7) {
-            sandays = sandays +1;
+            sandays = sandays + 1;
         }
     }
 }
