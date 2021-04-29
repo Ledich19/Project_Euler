@@ -15,7 +15,7 @@ var names = `"MARY","PATRICIA","LINDA","BARBARA","ELIZABETH","JENNIFER","MARIA",
 let arr = names.split(',').sort();
 
 let arrPoint = arr.map((name, index) => {
-    return points(name,index);
+    return points(name.slice(1,-1),index);
 });
 
 console.log(arrPoint.reduce((summ,current) => {
@@ -24,9 +24,8 @@ console.log(arrPoint.reduce((summ,current) => {
 
 function points(name, index) {
     let summ = 0;
-    for (let i = 1; i < name.length - 1; i++) {
+    for (let i = 0; i < name.length; i++) {
         summ += (name.charCodeAt(i) - 64);
     }
     return summ * (index + 1);
 }
-
