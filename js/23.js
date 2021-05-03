@@ -26,7 +26,6 @@ for (let i = 12; i < 28123; i++) {
 }
 //масив сумм избыточных чисел
 let arrSumm = [];
-
 for (let j = 0; j < abundantArr.length; j++) {
     for (let i = j; i < abundantArr.length; i++) {
         let summ = abundantArr[j] + abundantArr[i];
@@ -37,7 +36,6 @@ for (let j = 0; j < abundantArr.length; j++) {
         }
     }
 }
-
 
 //удаляю из первого масива числа которые можно получить сумированием
 for (let i = 0; i < arr.length; i++) {
@@ -53,9 +51,9 @@ console.log(arr.reduce((summ, current) => {
 
 function dividers(num) {
     let summ = 0;
-    for (let i = 0; i <= Math.ceil(num / 2); i++) {
+    for (let i = 0; i <= Math.sqrt(num); i++) {
         if (num % i == 0) {
-            summ += i;
+            summ = summ + i + num;
         }
     }
     return (summ);
