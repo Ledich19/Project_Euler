@@ -25,15 +25,20 @@ for (let i = 12; i < 28123; i++) {
     }
 }
 //масив сумм избыточных чисел
-let arrSumm = [0];
-abundantArr.forEach((element, index) => {
-    for (let i = index; i < abundantArr.length; i++) {
-        let summ = element + abundantArr[i];
+let arrSumm = [];
+
+for (let j = 0; j < abundantArr.length; j++) {
+    for (let i = j; i < abundantArr.length; i++) {
+        let summ = abundantArr[j] + abundantArr[i];
         if (summ <= 28123) {
             arrSumm.push(summ);
+        } else {
+            break;
         }
     }
-});
+}
+
+
 //удаляю из первого масива числа которые можно получить сумированием
 for (let i = 0; i < arr.length; i++) {
     if (arrSumm.includes(arr[i], 0)) {
