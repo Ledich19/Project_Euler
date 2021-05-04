@@ -13,13 +13,14 @@
 // Найдите сумму всех положительных чисел, которые не могут быть записаны как сумма двух избыточных чисел.
 
 //масив от 1 до 28123
+const limit = 28123;
 let arr = [];
-for (let i = 0; i < 28123; i++) {
+for (let i = 0; i < limit; i++) {
     arr.push(i);
 }
 //масив избыточных чисел
 let abundantArr = [];
-for (let i = 12; i < 28123; i++) {
+for (let i = 12; i < limit; i++) {
     if (dividers(i) > i) {
         abundantArr.push(i);
     }
@@ -29,7 +30,7 @@ let arrSumm = [];
 for (let j = 0; j < abundantArr.length; j++) {
     for (let i = j; i < abundantArr.length; i++) {
         let summ = abundantArr[j] + abundantArr[i];
-        if (summ <= 28123) {
+        if (summ <= limit) {
             arrSumm.push(summ);
         } else {
             break;
@@ -39,7 +40,8 @@ for (let j = 0; j < abundantArr.length; j++) {
 
 //удаляю из первого масива числа которые можно получить сумированием
 for (let i = 0; i < arr.length; i++) {
-    if (arrSumm.includes(arr[i], 0)) {
+    let index = arrSumm.indexOf(arr[i], 0);
+    if (index != -1) {
         arr.splice(i, 1);
         i--;
     }
@@ -51,9 +53,9 @@ console.log(arr.reduce((summ, current) => {
 
 function dividers(num) {
     let summ = 0;
-    for (let i = 0; i <= Math.ceil(num/2); i++) {
+    for (let i = 0; i <= Math.ceil(num / 2); i++) {
         if (num % i == 0) {
-            summ +=i;
+            summ += i;
         }
     }
     return (summ);
