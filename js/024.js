@@ -7,27 +7,27 @@
 // Какова миллионная словарная перестановка из цифр 0, 1, 2, 3, 4, 5, 6, 7, 8 и 9?
 let permutationOne = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 let count = 1;
+let findPermutation = 1000000;
 
 while (count < factorial(permutationOne.length)) {
-    narayanaAlgorithm();
+    permutationOne = narayanaAlgorithm(permutationOne);
     count++;
-    if (count == 1000000) {
+    if (count == findPermutation) {
         console.log(permutationOne);
     }
 }
-
-
-function narayanaAlgorithm() {
-    for (let i = permutationOne.length - 1; i => 0; i--) {
-        if (permutationOne[i] < permutationOne[i + 1]) {
-            for (let j = permutationOne.length - 1; i => 0; j--) {
-                if (permutationOne[j] > permutationOne[i]) {
-                    let a = permutationOne[i];
-                    let b = permutationOne[j];
-                    permutationOne[i] = b;
-                    permutationOne[j] = a;
-                    let arr = permutationOne.splice(i + 1, permutationOne.length);
-                    permutationOne = [...permutationOne, ...turn(arr)];
+//Алгоритм Нараяны вычисляющий следующую перестановку
+function narayanaAlgorithm(arr) {
+    for (let i = arr.length - 1; i => 0; i--) {
+        if (arr[i] < arr[i + 1]) {
+            for (let j = arr.length - 1; i => 0; j--) {
+                if (arr[j] > arr[i]) {
+                    let a = arr[i];
+                    let b = arr[j];
+                    arr[i] = b;
+                    arr[j] = a;
+                    let arrForTurn = arr.splice(i + 1, arr.length);
+                    return [...arr, ...turn(arrForTurn)];
                     break;
                 }
             }
@@ -35,14 +35,14 @@ function narayanaAlgorithm() {
         }
     }
 };
-
+//Вычисляет факториал
 function factorial(num) {
     if (num === 1) {
         return 1;
     }
     return num * factorial(num - 1);
 }
-
+//Разворачивает масив
 function turn(arr) {
     let newArr = [];
     for (let i = arr.length - 1; i >= 0; i--) {

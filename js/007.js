@@ -1,6 +1,8 @@
 'use strict'
-
-const primeNumber = 10001;
+// Выписав первые шесть простых чисел, получим 2, 3, 5, 7, 11 и 13.
+//  Очевидно, что 6-е простое число - 13.
+// Какое число является 10001-м простым числом?
+// const primeNumber = 10001;
 
 for (let i = 2, x = 0; x < primeNumber; i++) {
 	if (primeCheck(i) != false) {
