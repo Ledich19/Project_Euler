@@ -16,13 +16,14 @@
 // содержит самую длинную повторяющуюся последовательность цифр.
 let numerator = 1;
 let arr = [];
-let result = {
+let maxDivider = 1000;
+let answer = {
     long: 0,
     numberD: 0,
     decimalPart: '0'
 };
 
-for (let j = 2; j < 1000; j++) {
+for (let j = 2; j < maxDivider; j++) {
     arr = [];
     numerator = 1;
     for (let i = 0; i < 10000; i++) {
@@ -31,20 +32,27 @@ for (let j = 2; j < 1000; j++) {
         numerator = a;
     }
     let result2 = findeRecurringCycle(arr.join(''));
-    if (result2 > result.long) {
-        result.long = result2;
-        result.numberD = j,
-        result.decimalPart = (arr.join(''))
+    
+    if (result2 > answer.long) {
+        answer.long = result2;
+        answer.numberD = j,
+        answer.decimalPart = (arr.join(''))
     }
 }
-console.log(result);
+console.log(answer);
 
 function findeRecurringCycle(str) {
     let result = 0;
-    let j = `${str[20]}${str[21]}${str[22]}${str[23]}${str[24]}`;
-    let a = str.indexOf(j);
-    let b = str.indexOf(j, a + 1);
     let count = 0;
+    let num = ``;
+    //Беру с масива последовательность из девяти чисел
+    for (let i = 10; i < 20; i++) {
+        num += str[i];
+    }
+    //ищу следующую такую же
+    let a = str.indexOf(num);
+    let b = str.indexOf(num, a + 1);
+
     if (a >= 0 && b >= 0) {
         for (let i = 0; a + i != b; i++) {
             if (str[a + i] == str[b + i]) {
@@ -53,9 +61,7 @@ function findeRecurringCycle(str) {
                 break;
             }
         }
-        if (count > result) {
-            result = count;
-        }
     }
-    return (result);
+    //Возвращает количество символов в повторе
+    return (count);
 }
