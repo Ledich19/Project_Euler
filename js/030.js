@@ -26,9 +26,9 @@ function summDegree(num, degree) {
     if (num < 10) {
         return Math.pow(num, degree)
     }
-    let arr = String(num).split('');
-    arr = arr.map((e) =>  Math.pow(e,degree));
-    summ = arr.reduce((summ, current) => {
+    let arrNum = String(num).split('');
+    arrNum = arrNum.map((e) =>  Math.pow(e,degree));
+    summ = arrNum.reduce((summ, current) => {
         return +summ + current;
     })
     return summ;
