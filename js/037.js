@@ -12,7 +12,6 @@ let arrRasult = [];
 
 for (let num = 10; arrRasult.length != 11; num++) {
     if (leftToRight(num) && rightTolLeft(num) && isPrime(num)) {
-    
         arrRasult.push(num);
     }
 }
@@ -43,7 +42,7 @@ function rightTolLeft(num) {
 }
 
 function isPrime(x) {
-    if (x==1) {
+    if (x == 1) {
         return false;
     }
     for (let i = 2; i <= Math.sqrt(x); i++) {
