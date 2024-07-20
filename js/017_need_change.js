@@ -9,7 +9,7 @@
 const arr1To9 = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 const arr10To19 = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
 const arr20To90 = ['', 'ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
-let and = 'and';
+let AND = 'and';
 let hundred = 'hundred';
 const thousand = 'onethousand';
 
@@ -58,8 +58,8 @@ for (let world = 0; world < 1000; world++) {
                     if (world[1] == 1) {
                         arr10To19.forEach((e, i) => {
                             if (world[2] == i) {
-                                summ = summ + g.length + hundred.length + and.length + e.length;
-                                console.log(g + '-' + hundred + '-' + and + '-' + e);
+                                summ = summ + g.length + hundred.length + AND.length + e.length;
+                                console.log(g + '-' + hundred + '-' + AND + '-' + e);
                             }
                         });
                     } else {
@@ -68,8 +68,8 @@ for (let world = 0; world < 1000; world++) {
                                 arr1To9.forEach((e, i) => {
 
                                     if (world[2] == i) {
-                                        console.log(g + '-' + hundred + '-' + and + '-' + j + '-' + e);
-                                        summ = summ + g.length + hundred.length + and.length + j.length + e.length;
+                                        console.log(g + '-' + hundred + '-' + AND + '-' + j + '-' + e);
+                                        summ = summ + g.length + hundred.length + AND.length + j.length + e.length;
                                     }
                                 });
                             }
