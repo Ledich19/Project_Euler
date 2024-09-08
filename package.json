@@ -1,5 +1,12 @@
 {
+  "scripts": {
+    "ts": "ts-node"
+  },
   "devDependencies": {
     "@types/node": "^20.14.11"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
   }
 }
