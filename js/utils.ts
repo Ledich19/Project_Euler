@@ -1,5 +1,6 @@
 export const isSimple = (value: number) => {
   if (!Number.isInteger(value)) return false;
+
   for (let i = 2; i <= Math.sqrt(value); i++) {
     if (value % i === 0) return false;
   }
@@ -13,5 +14,6 @@ export const generateSimpleNumbers = (value: number, numbers: number[]) => {
       numbers.push(i);
     }
   }
-  return numbers
+
+  return numbers;
 };
