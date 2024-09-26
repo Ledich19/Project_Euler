@@ -1,4 +1,4 @@
-import { generateSimpleNumbers, isSimple } from "./utils";
+import { generateSimpleNumbers, isPrime } from "../utils/utils";
 // Первые два последовательные числа,
 // каждое из которых имеет два отличных друг от друга простых множителя:
 // 14 = 2 × 7
@@ -22,14 +22,14 @@ import { generateSimpleNumbers, isSimple } from "./utils";
       return [];
     }
 
-    if (isSimple(value)) {
+    if (isPrime(value)) {
       return [value];
     }
     return getSimpleDividers(value);
   };
 
   const getSimpleDividers = (value: number): number[] => {
-    if (isSimple(value)) {
+    if (isPrime(value)) {
       return [value];
     }
 

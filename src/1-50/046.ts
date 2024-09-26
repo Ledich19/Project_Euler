@@ -1,4 +1,4 @@
-import { generateSimpleNumbers, isSimple } from "./utils";
+import { generateSimpleNumbers, isPrime } from "../utils/utils";
 
 {
   // Кристиан Гольдбах показал, что любое нечетное составное число можно
@@ -30,7 +30,7 @@ import { generateSimpleNumbers, isSimple } from "./utils";
   };
 
   for (let i = 9; true; i++) {
-    if (isSimple(i)) continue;
+    if (isPrime(i)) continue;
     if (i % 2 === 0) continue;
     generateSimpleNumbers(i, simpleNumbers);
     if (!isTheHypothesisTrue(i)) {

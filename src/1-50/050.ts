@@ -1,4 +1,4 @@
-import { generateSimpleNumbers, isSimple } from "./utils";
+import { generateSimpleNumbers, isPrime } from "../utils/utils";
 // Простое число 41 можно записать в виде суммы шести последовательных простых чисел:
 // 41 = 2 + 3 + 5 + 7 + 11 + 13
 // Это - самая длинная сумма последовательных простых чисел,
@@ -24,7 +24,7 @@ import { generateSimpleNumbers, isSimple } from "./utils";
       count++;
       sum += simpleNumbers[i];
 
-      if (isSimple(sum)) {
+      if (isPrime(sum)) {
         result = sum;
         sumCount = count;
       }

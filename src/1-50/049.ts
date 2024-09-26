@@ -8,7 +8,7 @@
 // существует еще одна четырехзначная возрастающая арифметическая прогрессия.
 
 // Какое 12-значное число образуется, если объединить три члена этой прогрессии?
-import { isSimple } from "./utils";
+import { isPrime } from "../utils/utils";
 
 const START = 1000;
 const LIMIT = 10000;
@@ -39,7 +39,7 @@ const isPermutations = (progression: number[]) => {
 
 const findSimpleNumbers = (progression: number[] ): number[] | null => {
   if (progression.length < SIZE ) return null;
-  if (progression.every((number) => isSimple(number)) && isPermutations(progression)) {
+  if (progression.every((number) => isPrime(number)) && isPermutations(progression)) {
     return progression;
   }
   return null;

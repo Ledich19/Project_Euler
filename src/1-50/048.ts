@@ -1,7 +1,5 @@
+import { NumberStringMath } from "../utils/NumberStringMath";
 // Сумма 11 + 22 + 33 + ... + 1010 = 10405071317.
-
-import { NumberStringMath } from "./NumberStringMath";
-
 // Найдите последние десять цифр суммы 11 + 22 + 33 + ... + 10001000.
 
 const match = new NumberStringMath()
